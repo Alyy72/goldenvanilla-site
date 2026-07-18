@@ -116,7 +116,7 @@
     </div>
     <div>
       <!-- Netlify form: works automatically once deployed on Netlify -->
-      <form name="kitchen-sample" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <form name="kitchen-sample" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="kitchen-sample">
         <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
         <div class="form-grid">
@@ -157,7 +157,7 @@
     <span class="eyebrow on-dark" style="display:block">Welcome offer</span>
     <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:12px">Sign up. Get 10% off your first order.</h2>
     <p style="margin-bottom:28px">Drop your details and we'll send your 10% welcome discount on WhatsApp — plus first access to new lots when they land from Uganda.</p>
-    <form name="signup-10" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+    <form name="signup-10" method="POST" action="/thanks.html data-netlify="true" netlify-honeypot="bot-field" style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
       <input type="hidden" name="form-name" value="signup-10">
       <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
       <input name="name" required placeholder="Your name" style="flex:1;min-width:180px;max-width:240px">
