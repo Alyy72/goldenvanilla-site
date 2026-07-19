@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank you — Golden Vanilla</title>
+  <meta name="robots" content="noindex" />
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #310F10;
+      color: #F3E3B2;
+      font-family: Georgia, 'Times New Roman', serif;
+      text-align: center;
+      padding: 24px;
+    }
+    .card { max-width: 480px; }
+    h1 { font-size: 2rem; margin-bottom: 0.5rem; letter-spacing: 0.5px; }
+    p  { font-size: 1.05rem; line-height: 1.6; opacity: 0.9;
+         font-family: Arial, Helvetica, sans-serif; }
+    a.btn {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 14px 28px;
+      background: #F3E3B2;
+      color: #310F10;
+      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      border-radius: 6px;
+    }
+    a.home { display: block; margin-top: 18px; color: #F3E3B2;
+             font-family: Arial, sans-serif; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Got it. 🌱</h1>
+    <p>Your request is in. We'll reach out on WhatsApp shortly to confirm
+       the details — usually within a few hours.</p>
+    <a class="btn"
+       href="https://wa.me/971529033466?text=Hi%20Golden%20Vanilla%2C%20I%20just%20submitted%20a%20request%20on%20the%20website">
+       Message us now on WhatsApp</a>
+    <a class="home" href="/">← Back to Golden Vanilla</a>
+  </div>
+</body>
+</html>
