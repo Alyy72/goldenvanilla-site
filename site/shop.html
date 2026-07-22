@@ -119,8 +119,8 @@
       <p>Signed up for our 10% welcome offer? Mention it in the notes and we'll apply it to your first order. Referred by a friend? Add their name — they earn 15 AED, you save 10%.</p>
     </div>
     <div>
-      <form name="order" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="order">
+      <form id="orderForm" onsubmit="sendOrder(event)">
+        
         <input type="hidden" name="order-total" id="o-total-hidden" value="115 AED (1 pouch + delivery)">
         <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
         <div class="form-grid">
@@ -146,6 +146,27 @@
       </form>
       <p class="mono" style="font-size:.72rem;letter-spacing:.1em;margin-top:14px;color:rgba(243,227,178,.5)">OR ORDER DIRECTLY ON WHATSAPP: <a href="https://wa.me/971529033466?text=Hi%20Golden%20Vanilla%2C%20I%27d%20like%20to%20place%20an%20order." style="color:var(--gold)">+971 52 903 3466</a></p>
       <script>
+      <script>
+function sendOrder(e){
+  e.preventDefault();
+  var name = document.getElementById('o-name').value;
+  var phone = document.getElementById('o-phone').value;
+  var qty = document.getElementById('o-qty').options[document.getElementById('o-qty').selectedIndex].text;
+  var area = document.getElementById('o-area').value;
+  var address = document.getElementById('o-address').value;
+  var notes = document.getElementById('o-notes').value;
+  var total = document.getElementById('o-total-hidden').value;
+  var msg = "🌱 NEW ORDER — Golden Vanilla%0A%0A"
+    + "Name: " + name + "%0A"
+    + "WhatsApp: " + phone + "%0A"
+    + "Order: " + qty + "%0A"
+    + "Total: " + total + "%0A"
+    + "Area: " + area + "%0A"
+    + "Address: " + address + "%0A"
+    + "Notes: " + notes;
+  window.open("https://wa.me/971529033466?text=" + msg, "_blank");
+}
+</script>
       function gvTotal(){
         var q=document.getElementById('o-qty').value;
         var t=document.getElementById('o-total');
