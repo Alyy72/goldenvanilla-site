@@ -101,39 +101,39 @@
           <li>Café &amp; pastry-kitchen favorite</li>
           <li>Free Dubai delivery (over 200 AED)</li>
         </ul>
-        <a class="btn btn-gold" href="https://pay.ziina.com/GoldenVanilla/yi6ifqh9b?source=app" target="_blank" rel="noopener">Buy now — AED 255</a>
-      <p class="mono" style="font-size:.74rem;letter-spacing:.1em;margin-top:26px;color:var(--ink-soft)">PAY BY CARD ABOVE · OR <a href="https://wa.me/971529033466?text=Hi%20Golden%20Vanilla%2C%20I%27d%20like%20to%20place%20an%20order." style="color:var(--gold)">ORDER ON WHATSAPP</a> (CASH OR TRANSFER ON DELIVERY) · DUBAI-WIDE</p>
-    </div>
-    <p class="mono" style="font-size:.74rem;letter-spacing:.1em;margin-top:26px;color:var(--ink-soft)">ORDERS CONFIRMED ON WHATSAPP · CASH OR BANK TRANSFER ON DELIVERY · DUBAI-WIDE</p>
-  </div>
-</section>
+        <script>
+function sendOrder(e){
+  e.preventDefault();
+  var name = document.getElementById('o-name').value;
+  var phone = document.getElementById('o-phone').value;
+  var qty = document.getElementById('o-qty').options[document.getElementById('o-qty').selectedIndex].text;
+  var area = document.getElementById('o-area').value;
+  var address = document.getElementById('o-address').value;
+  var notes = document.getElementById('o-notes').value;
+  var total = document.getElementById('o-total-hidden').value;
+  var msg = "🌱 NEW ORDER — Golden Vanilla%0A%0A"
+    + "Name: " + name + "%0A"
+    + "WhatsApp: " + phone + "%0A"
+    + "Order: " + qty + "%0A"
+    + "Total: " + total + "%0A"
+    + "Area: " + area + "%0A"
+    + "Address: " + address + "%0A"
+    + "Notes: " + notes;
+  window.open("https://wa.me/971529033466?text=" + msg, "_blank");
+}
 
-<div class="tear"></div>
-<section class="dark" id="order">
-  <div class="dark-bg" style="background-image:url('images/beans-orchids.jpg');opacity:.18"></div>
-  <div class="wrap split">
-    <div>
-      <span class="eyebrow on-dark">Place your order</span>
-      <h2>Order now. Baking by the weekend.</h2>
-      <p>Fill in the form and we'll confirm your order on WhatsApp within a few hours. <strong style="color:var(--gold)">Every order is delivered within 2 working days</strong>, anywhere in Dubai — free delivery on orders over 200 AED.</p>
-      <p>Signed up for our 10% welcome offer? Mention it in the notes and we'll apply it to your first order. Referred by a friend? Add their name — they earn 15 AED, you save 10%.</p>
-    </div>
-    <div>
-      <form id="orderForm" onsubmit="sendOrder(event)">
-        
-        <input type="hidden" name="order-total" id="o-total-hidden" value="115 AED (1 pouch + delivery)">
-        <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
-        <div class="form-grid">
-          <div><label for="o-name">Your name</label><input id="o-name" name="name" required placeholder="Full name"></div>
-          <div><label for="o-phone">WhatsApp number</label><input id="o-phone" name="phone" type="tel" required placeholder="+971 …"></div>
-          <div>
-            <label for="o-qty">Order size</label>
-            <select id="o-qty" name="quantity" onchange="gvTotal()">
-              <option value="1">1 pouch · 50g — 95 AED</option>
-              <option value="2">2 pouches · 100g — 180 AED</option>
-              <option value="3">3 pouches · 150g — 255 AED</option>
-            </select>
-          </div>
+function gvTotal(){
+  var q=document.getElementById('o-qty').value;
+  var t=document.getElementById('o-total');
+  var h=document.getElementById('o-total-hidden');
+  var map={
+    '1':{txt:'115 AED <span style="font-size:.6em;font-weight:400;color:rgba(243,227,178,.6)">(95 + 20 delivery)</span>',val:'115 AED (1 pouch + delivery)'},
+    '2':{txt:'200 AED <span style="font-size:.6em;font-weight:400;color:rgba(243,227,178,.6)">(180 + 20 delivery · you saved 10)</span>',val:'200 AED (2 pouches + delivery)'},
+    '3':{txt:'255 AED <span style="font-size:.6em;font-weight:400;color:rgba(243,227,178,.6)">(free delivery · you saved 30 + 20)</span>',val:'255 AED (3 pouches, free delivery)'}
+  };
+  t.innerHTML=map[q].txt;h.value=map[q].val;
+}
+</script>
           <div><label for="o-area">Delivery area</label><input id="o-area" name="area" required placeholder="e.g. Satwa, Al Quoz, JLT"></div>
           <div class="full"><label for="o-address">Full delivery address</label><textarea id="o-address" name="address" rows="2" required placeholder="Building, street, apartment / villa number"></textarea></div>
           <div class="full"><label for="o-notes">Notes (10% signup / referral name / delivery instructions)</label><textarea id="o-notes" name="notes" rows="2" placeholder="Optional"></textarea></div>
