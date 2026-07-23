@@ -78,7 +78,7 @@
           <li>Perfect first order for home bakers</li>
           <li>+ 20 AED Dubai delivery</li>
         </ul>
-        <a class="btn btn-ghost" href="https://pay.ziina.com/GoldenVanilla/jL58JByJF?source=app" target="_blank" rel="noopener">Buy now — AED 95</a>
+        <a class="btn btn-ghost" href="https://pay.ziina.com/GoldenVanilla/jL58JByJF?source=app" target="_blank" rel="noopener" onclick="gtag('event','begin_checkout',{'value':95,'currency':'AED'});">Buy now — AED 95</a>
       </div>
 
       <div class="tier">
@@ -91,7 +91,7 @@
           <li>Split one for baking, infuse the other</li>
           <li>+ 20 AED Dubai delivery</li>
         </ul>
-        <a class="btn btn-ghost" href="https://pay.ziina.com/GoldenVanilla/WrF08kanf?source=app" target="_blank" rel="noopener">Buy now — AED 180</a>
+        <a class="btn btn-ghost" href="https://pay.ziina.com/GoldenVanilla/WrF08kanf?source=app" target="_blank" rel="noopener" onclick="gtag('event','begin_checkout',{'value':180,'currency':'AED'});">Buy now — AED 180</a>
       </div>
 
       <div class="tier best">
@@ -105,7 +105,7 @@
           <li>Café &amp; pastry-kitchen favorite</li>
           <li>Free Dubai delivery (over 200 AED)</li>
         </ul>
-        <a class="btn btn-gold" href="https://pay.ziina.com/GoldenVanilla/yi6ifqh9b?source=app" target="_blank" rel="noopener">Buy now — AED 255</a>
+        <a class="btn btn-ghost" href="https://pay.ziina.com/GoldenVanilla/yi6ifqh9b?source=app" target="_blank" rel="noopener" onclick="gtag('event','begin_checkout',{'value':255,'currency':'AED'});">Buy now — AED 255</a>
       </div>
     </div>
 
@@ -170,7 +170,8 @@
           + "Area: " + document.getElementById('o-area').value + "%0A"
           + "Address: " + document.getElementById('o-address').value + "%0A"
           + "Notes: " + document.getElementById('o-notes').value;
-        window.open("https://wa.me/971529033466?text=" + msg, "_blank");
+        gtag('event','generate_lead',{'value':50,'currency':'AED'});
+          window.open("https://wa.me/971529033466?text=" + msg, "_blank");
       }
       </script>
     </div>
